@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elDigitalModel xmlns="http://www.rzdp.ru/KSPD/DigitalModel"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.rzdp.ru/KSPD/DigitalModel file:/C:/temp/Dima.Soft/asm%20-%20%D0%9E%D0%B1%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%D0%A6%D0%9C%D0%9F%20v3.3" name="EmudYVX" date="ba0eyeLa6m.n3o9-MuRT-5" type="VNY0TkRt">
+    <Track name="J98" id="-480321837" pkBase="1" startPicketage="ysOASyyIHqFOUJ.wUQv" endPicketage="iu_KlsyOgm"
+         startStub="WithoutStop" endStub="Stop">
+        <IrregularPicket km="-1030231533" pk="xt6cTX2i80VKqRxmJ.69D.3z-wl" length="1601096030.199"/>
+        <IrregularPicket km="-1691332933" pk="HfdenfZ4S1LDJY218s" length="1356837193.303"/>
+        <Bridge startPicketage="ZlC3" endPicketage="ub75abpoJSBL_i50fSQaG2jB.kFDnu" length="-1405889674.764">
+            <Span startPicketage="aeJQgGdRy" endPicketage="Q" length="1466633584.103" material="Metal" driving="Top"/>
+        </Bridge>
+        <Bridge startPicketage="xtLD_dIWajCABO-6." endPicketage="It9V5Vi7nnvX" length="484620825.918">
+            <Span startPicketage="xxkOJbGwHjuYumZ" endPicketage="qyLu.lD." length="-2079323605.525" material="Stone" driving="Bottom"/>
+        </Bridge>
+        <SurveyAxis>
+            <Point railElevation="262461455" gauge="-1129859136" picketage="LcjAsjYoiRDk0w" x="1346515723.562" y="-275364889.917"
+                 altitude="-15781965.932"/>
+            <Point railElevation="1240422201" gauge="1704483325" picketage="RghLaERaPJCMzIBWLdnrcWRLmRc5" x="650948308.964"
+                 y="-1307460976.105" altitude="1550694790.487"/>
+        </SurveyAxis>
+        <NaturalGroundPoint picketage="W0zDG" x="-185531023.35" y="13331458.143" altitude="-1290988897.365"/>
+        <NaturalGroundPoint picketage="mG1T97O3CGaYmBRKsvl2" x="1516553195.87" y="-2020725983.944" altitude="-737138493.363"/>
+        <SubgradeEdge delta="-1223771251.733" picketage="CsFVtYH" x="1311480549.44" y="-1290421743.136" altitude="635447455.636"/>
+        <SubgradeEdge delta="-497835125.575" picketage="gQGs8H3Sht" x="-281399271.258" y="179225579.428" altitude="-512609341.372"/>
+        <Joint picketage="GpwiqRa1OTtN_4S7588-5Dt" x="91698702.081" y="-1836039256.183" altitude="-366438874.998">
+<!--            <Normal/>-->
+            <Insulation name="hbu.OMRb-CH65mwj" sizeOverage="Yes"/>
+<!--            <Weld/>-->
+        </Joint>
+        <Joint picketage="KV.e7BAfPgIPu9bHRyjyVXnk8o" x="2118566172.335" y="-1315113531.773" altitude="-1241374741.053">
+            <Normal/>
+<!--            <Insulation name="qnvx0rLa" sizeOverage="No"/>-->
+<!--            <Weld/>-->
+        </Joint>
+        <Pointwork number="sDoCxAFm5" side="Symmetric" direction="Backward" mark="pm1_11" hill="true" type="Normal" control="Centralized"
+             picketage="lc4-C40SfvlN-ZOTO" x="1252157734.959" y="1319360008.937" altitude="-621345769.902"/>
+        <Pointwork number="Tlt0uCD_M" side="Left" direction="Straight" mark="pm2_11" hill="true" type="DerailingSharp"
+             control="Manual" picketage="XPYmDomGZXW60nKunSmf" x="2034115400.898" y="-241629961.734"
+             altitude="-376346085.017"/>
+        <CableLine type="Communication" crossingLevelDifference="1094867851" intersectionAngle="101114613" picketage="vxm7Xlfrw8cJoQfviFZZZpoaK5j"
+             x="-1375209472.062" y="284464290.183" altitude="526495802.961"/>
+        <CableLine type="Communication" crossingLevelDifference="1124569660" intersectionAngle="-1393542255" picketage="orNlEOfQq"
+             x="2077220137.758" y="-1794199521.267" altitude="-820282572.785"/>
+        <Pipeline crossingLevelDifference="319949884" description="xkWdJVg" intersectionAngle="1932371751" picketage="Q.E7fEz"
+             x="-417467952.449" y="-1037993678.869" altitude="743515931.105"/>
+        <Pipeline crossingLevelDifference="-1639142794" description="gEkM0" intersectionAngle="-867803625" picketage="cc1qpa9z"
+             x="-729893955.715" y="1928546694.855" altitude="628298567.108"/>
+        <RoadCrosspass type="Underpass" crossingLevelDifference="-1125843316" description="UR0LnG" picketage="KPtjz." x="1809401457.396"
+             y="1094703106.139" altitude="-365719271.663"/>
+        <RoadCrosspass type="Overbridge" crossingLevelDifference="1802476144" description="G" picketage="PFiUh-YBe9H8FG-1ZH"
+             x="265694853.917" y="1152866424.521" altitude="-614810081.073"/>
+        <DerailingShoe control="Centralized" picketage="kN5ESTVZu4XE3qAhJYSNhxwJXVpfi" x="-1470730097.305" y="-1490877516.421"
+             altitude="-1986383990.147"/>
+        <DerailingShoe control="Manual" picketage="pI5DyTL59Zp.cGi2Iaa-aekfcCog" x="2020435817.605" y="-134419049.669" altitude="1529257233.367"/>
+        <StoppingDevice startPicketage="HJSjtyOLjcozKo1BZGFf" endPicketage="P.W_Zz"/>
+        <StoppingDevice startPicketage="F84btLz" endPicketage="fCqEzoaTij8z8OU5_bmZb_UPoMCxir"/>
+        <TrackCrossing mark="QLUhhtYZj9sA_j.sC-PpHTdd" picketage="jHEZ9sss" x="1288529375.804" y="-762387848.43" altitude="1268317086.538"/>
+        <TrackCrossing mark="SpwsdWwjrJOpop1g" picketage="G.J.GpI_GGO41tOfNDsd5oqtUCVfL" x="-2139868468.88" y="-309043549.486"
+             altitude="-246907688.096"/>
+        <TurnTable picketage="DK3EaX0WZZsWv9ljAJGMsa" x="-1007759268.806" y="1809401999.182" altitude="-520655628.532"/>
+        <TurnTable picketage="wLT1u3KVIqAJTMp" x="-1450143658.977" y="285380187.277" altitude="1691999919.322"/>
+        <ShoeKicker side="Right" picketage="eiMmfPRCENao9Z06CxWNPGzz" x="-1429152732.001" y="-1997840431.242" altitude="1721985342.153"/>
+        <ShoeKicker side="Left" picketage="v8.Y4PmHpo_" x="-72224304.456" y="-1102666302.719" altitude="-190664887.997"/>
+        <BrakeStop control="Centralized" picketage="bJ" x="1315817061.442" y="1369714329.553" altitude="-1451292433.425"/>
+        <BrakeStop control="Centralized" picketage="lXefmtefwKrp" x="-1522613694.418" y="-834643732.674" altitude="676490764.744"/>
+        <ClearanceGate picketage="F4rb1SVoy2PjR_A4Yoa4_Bqnp" x="790195722.584" y="2146525842.127" altitude="1013085314.547"/>
+        <ClearanceGate picketage="iTDgOA.jg" x="-884526818.626" y="1782259914.919" altitude="1390057876.583"/>
+        <WagonScales>
+            <Start picketage="u0-5w-Ra5E_-gZ" x="-1202033169.403" y="409107011.893" altitude="-1288813080.247"/>
+            <End picketage="Tg5j" x="1570985334.962" y="1307849159.665" altitude="1107576763.251"/>
+        </WagonScales>
+        <WagonScales>
+            <Start picketage="mPuHPZoB" x="-1238853370.623" y="166534328.21" altitude="-1456680261.79"/>
+            <End picketage="YjpNrnfdI" x="1107360133.56" y="-499266244.762" altitude="831813777.565"/>
+        </WagonScales>
+        <WagonRetarder>
+            <Start picketage="U-fJa7swckh-Tsy.Q" x="-2019475809.667" y="450755969.048" altitude="-1701037536.676"/>
+            <End picketage="Jq7HdMVYvR5XzUX" x="544809660.19" y="1587049378.139" altitude="561890504.954"/>
+        </WagonRetarder>
+        <WagonRetarder>
+            <Start picketage="N_.OKQ4nrlM_MT1Qltp8Lh" x="60564123.2" y="-1888923249.393" altitude="-213981985.088"/>
+            <End picketage="ZmfhM16A-FEd59czpx2xs" x="-602865258.079" y="1637677063.66" altitude="1819417837.978"/>
+        </WagonRetarder>
+        <WagonAxleCounter picketage="s88-WggAP.SUsx_1XX" x="-1185887978.157" y="-1661661356.891" altitude="-1627283786.93"/>
+        <WagonAxleCounter picketage="uflHFe5xfc5dG5rL1Batws1." x="67718788.195" y="-1632139456.11" altitude="984992722.742"/>
+        <SurveyPlan>
+            <CoordGeom>
+<!--                <Line length="2028945102.149">
+                    <Start>108684788.053 72948160.239 79210307.117</Start>
+                    <End></End>
+                </Line>-->
+<!--                <Line length="-1304146306.067">
+                    <Start>562342030.151 731635956.259 1509059346.401</Start>
+                    <End>1692721818.153</End>
+                </Line>-->
+<!--                <Curve rot="ccw" crvType="arc" length="1949923207.218" radius="498947343.57">
+                    <Center>-368886285.861</Center>
+                    <End></End>
+                    <Center>1347348494.703 1363272516.082</Center>
+                </Curve>-->
+<!--                <Curve rot="cw" crvType="arc" length="2119673470.13" radius="-1351017365.612">
+                    <PI></PI>
+                    <PI>269792458.35 -713432918.791</PI>
+                    <PI></PI>
+                </Curve>-->
+                <Spiral length="1177056236.307" radiusEnd="-1440669094.106" radiusStart="631816869.97" rot="ccw" spiType="clothoid">
+<!--                    <Start>-681324105.669 812535383.419 1479729622.906</Start>-->
+<!--                    <PI></PI>-->
+                    <End>579238593.521</End>
+<!--                    <Start>-1845620569.773 1689085150.397</Start>-->
+<!--                    <PI>985707023.631 358862949.545 -1842216635.202</PI>-->
+                    <End>1390848736.833 1599676191.369 -1262969991.89</End>
+                    <Start>1528814531.379</Start>
+<!--                    <PI>-1276880536.368 2037827525.744</PI>-->
+<!--                    <End>416533574.895</End>-->
+                </Spiral>
+                <Spiral length="-961253721.929" radiusEnd="-273922827.473" radiusStart="-1769302904.237" rot="cw" spiType="clothoid">
+<!--                    <Start>-1978462356.51 -453024043.607</Start>-->
+<!--                    <PI>1956136781.572 -357979083.738</PI>-->
+                    <End>-1264438259.969</End>
+<!--                    <Start>-461894860.248</Start>-->
+<!--                    <PI>508853731.383 -214173863.145</PI>-->
+                    <End></End>
+<!--                    <Start></Start>-->
+                    <PI>-784405788.143</PI>
+<!--                    <End></End>-->
+                </Spiral>
+<!--                <Line length="885394504.668">
+                    <Start>-1300607719.735 -313438859.832</Start>
+                    <End>514107976.77</End>
+                </Line>-->
+<!--                <Line length="-1352703343.649">
+                    <Start>10222053.333</Start>
+                    <End>-1054905560.454 -643572600.635 -102872147.452</End>
+                </Line>-->
+<!--                <Curve rot="cw" crvType="arc" length="927524818.446" radius="316776208.327">
+                    <End>895533237.976</End>
+                    <End>1357376976.817</End>
+                    <PI>-320370085.798 2065022796.583 -1071118156.144</PI>
+                </Curve>-->
+<!--                <Curve rot="cw" crvType="arc" length="1994185247.955" radius="1895276977.002">
+                    <Center></Center>
+                    <Center>532318984.268 1679781597.955 -1982439470.72</Center>
+                    <Center>1512559676.301 1186515664.093</Center>
+                </Curve>-->
+                <Spiral length="-646574717.016" radiusEnd="-288450761.939" radiusStart="-713496891.618" rot="ccw" spiType="clothoid">
+<!--                    <Start></Start>-->
+<!--                    <PI></PI>-->
+                    <End>-1683056538.261 301248573.19 -18804815.786</End>
+<!--                    <Start></Start>-->
+<!--                    <PI>-640884084.295 43879802.232 892489473.676</PI>-->
+                    <End>-750567056.398</End>
+                    <Start>586523388.463 -517215131.148</Start>
+<!--                    <PI>-2020257008.609</PI>-->
+<!--                    <End></End>-->
+                </Spiral>
+                <Spiral length="343046660.698" radiusEnd="323188670.226" radiusStart="653682734.624" rot="cw" spiType="clothoid">
+<!--                    <Start>639715400.063</Start>-->
+<!--                    <PI>-1011711012.836</PI>-->
+                    <End>1065286611.492</End>
+<!--                    <Start>1077759366.693 -848617923.814</Start>-->
+<!--                    <PI>-377232657.681</PI>-->
+                    <End></End>
+<!--                    <Start>-58536619.354 836958948.87</Start>-->
+<!--                    <PI>748525413.71 -421361746.99</PI>-->
+                    <End>91158376.231</End>
+                </Spiral>
+            </CoordGeom>
+        </SurveyPlan>
+        <DesignProfile>
+            <Element length="394186712.778" slope="500860789.241">
+                <Start picketage="__-AmweO3oG44oZ_lJk2" altitude="145127830.378"/>
+                <End picketage="I" altitude="-1314920018.471"/>
+                <EndVertCurve radius="-1807348372.612" tangent="319152092.019" bisector="-1798070338.509"/>
+            </Element>
+            <Element length="-777336468.469" slope="-2058703447.434">
+                <Start picketage="xdNsgixc0NnNNEN" altitude="793591183.618"/>
+                <End picketage="hBH.r9jIul1BQmf-Kmu5Dk8G9MZx" altitude="535041055.706"/>
+                <EndVertCurve radius="247149002.323" tangent="-960362185.519" bisector="434337648.259"/>
+            </Element>
+        </DesignProfile>
+        <DesignPlan>
+            <CoordGeom>
+<!--                <Line length="1108938297.104">
+                    <Start>-1360002415.66</Start>
+                    <End></End>
+                </Line>-->
+<!--                <Line length="-150546967.911">
+                    <Start></Start>
+                    <End>-1737421324.05 1654898899.499 1542808065.058</End>
+                </Line>-->
+<!--                <Curve rot="ccw" crvType="arc" length="-1803635190.359" radius="-2099522914.621">
+                    <Center></Center>
+                    <Center></Center>
+                    <End>1637262765.744</End>
+                </Curve>-->
+<!--                <Curve rot="ccw" crvType="arc" length="1835373234.266" radius="910816028.37">
+                    <Start>1317825940.034</Start>
+                    <PI>1405781304.331 -1192462286.058 265829069.577</PI>
+                    <PI></PI>
+                </Curve>-->
+                <Spiral length="1612320640.546" radiusEnd="441276950.564" radiusStart="-1890874752.568" rot="cw" spiType="clothoid">
+                    <Start>-188604745.446</Start>
+<!--                    <PI>1265875223.649</PI>-->
+<!--                    <End>-677429729.55 734153200.407</End>-->
+<!--                    <Start>-2022612924.263</Start>-->
+<!--                    <PI>-1513237948.896 -883560103.545</PI>-->
+                    <End>-1557222860.519 -283813305.793 -2048476357.118</End>
+<!--                    <Start>1762355071.935 -378326721.322 -275137526.071</Start>-->
+                    <PI></PI>
+<!--                    <End>-1584405580.901 -565516149.966 143215306.678</End>-->
+                </Spiral>
+                <Spiral length="-1920138112.388" radiusEnd="-1890534207.014" radiusStart="835713831.583" rot="ccw" spiType="clothoid">
+<!--                    <Start>-1075912820.24 -583901627.482 -634780211.344</Start>-->
+<!--                    <PI>236563850.827</PI>-->
+                    <End></End>
+                    <Start>-1594314381.811 820829452.263</Start>
+<!--                    <PI>-1420747541.163 -406550254.006</PI>-->
+<!--                    <End></End>-->
+<!--                    <Start></Start>-->
+<!--                    <PI>-2065814625.027 -713671661.983</PI>-->
+                    <End></End>
+                </Spiral>
+<!--                <Line length="1567652616.689">
+                    <Start>1129628017.554 595485017.21 -1934557536.448</Start>
+                    <End>-1260451358.643 -913689310.335</End>
+                </Line>-->
+<!--                <Line length="194263452.788">
+                    <Start>1027051271.392 -1209231370.182</Start>
+                    <End></End>
+                </Line>-->
+<!--                <Curve rot="cw" crvType="arc" length="-2063741702.043" radius="-1795829970.509">
+                    <Center></Center>
+                    <Start>-1941408343.267</Start>
+                    <End>-614023956.519 1105750284.742</End>
+                </Curve>-->
+<!--                <Curve rot="ccw" crvType="arc" length="303989366.897" radius="-1676907989.075">
+                    <PI>-1968260283.874 1016043938.943 -1108785833.76</PI>
+                    <Center>-795488981.628 -461580708.956</Center>
+                    <PI>285788713.259 -1840288439.847 -872613550.022</PI>
+                </Curve>-->
+                <Spiral length="1092333087.132" radiusEnd="-1351850841.892" radiusStart="-1097039605.732" rot="cw" spiType="clothoid">
+<!--                    <Start>-1476850649.619 524653293.692</Start>-->
+                    <PI>1550006071.934 1797978214.216 -1287052307.508</PI>
+<!--                    <End></End>-->
+<!--                    <Start></Start>-->
+<!--                    <PI></PI>-->
+                    <End>93049736.781 -321458677.59 -893529486.92</End>
+<!--                    <Start>-784172130.568 -1218580228.568</Start>-->
+<!--                    <PI>1665497795.741 -1368921696.195 2045620899.417</PI>-->
+                    <End>918976613.121 -1822360559.135 2104352720.266</End>
+                </Spiral>
+                <Spiral length="-372637646.285" radiusEnd="-179747837.094" radiusStart="1966933153.679" rot="ccw" spiType="clothoid">
+<!--                    <Start>103972922.205 -222670801.604</Start>-->
+                    <PI>1012996421.363 -1911248079.734</PI>
+<!--                    <End>-1292612166.135 1267334120.953 119144267.317</End>-->
+<!--                    <Start></Start>-->
+<!--                    <PI>-297852427.787 -1552835563.904</PI>-->
+                    <End></End>
+<!--                    <Start>691389010.147 859835424.552 843891517.602</Start>-->
+                    <PI>648376944.402</PI>
+<!--                    <End></End>-->
+                </Spiral>
+            </CoordGeom>
+        </DesignPlan>
+    </Track>
+    <Track name="naH.F_q" id="310619581" pkBase="1" startPicketage="gbVDhS.nztyfd4qShyOmJ3Iok" endPicketage="quw7dN40QJ-cx-sZ"
+         startStub="StopBallast" endStub="Stop">
+        <IrregularPicket km="1195501455" pk="U9MdELOWpNe" length="1980886563.324"/>
+        <IrregularPicket km="-1424710886" pk="l" length="1388864241.296"/>
+        <Bridge startPicketage="HMr-sLub0.h-RGv" endPicketage="uinffxypgoaal7yQ0r1mC.45zU8qb" length="-1520162134.62">
+            <Span startPicketage="FdcT1PXLkgHXpsCF57Gj" endPicketage="G59d9-" length="1832236646.602" material="Composite"
+                 driving="Top"/>
+        </Bridge>
+        <Bridge startPicketage="xZGSHXGzq1NOncsM7Lb.ulv" endPicketage="Zj_" length="1644934650.718">
+            <Span startPicketage="db009ZHuZJrPhKPDZbdkLRnl6Gbk" endPicketage="I26kuo" length="113142293.783" material="Metal"
+                 driving="Top"/>
+        </Bridge>
+        <SurveyAxis>
+            <Point railElevation="673703669" gauge="1532561691" picketage="JR6q0yBE" x="-752339768.606" y="-1049352965.38"
+                 altitude="-166991275.254"/>
+            <Point railElevation="-1181434694" gauge="1401142687" picketage="VgWgdCL4" x="-2015495205.518" y="-1995136734.258"
+                 altitude="1538214818.742"/>
+        </SurveyAxis>
+        <NaturalGroundPoint picketage="Hyc" x="1108079848.663" y="-1159797719.884" altitude="46535235.956"/>
+        <NaturalGroundPoint picketage="pPm_9TIHJqr4c5iV" x="1696955758.941" y="-712365309.341" altitude="-1327856400.276"/>
+        <SubgradeEdge delta="-37917080.966" picketage="cD2U3ZJiflYaj9Yab7m" x="1020587833.589" y="-585099728.758" altitude="869951431.316"/>
+        <SubgradeEdge delta="-2005936318.031" picketage="UpcaQ7" x="304560108.667" y="1878248557.826" altitude="871604449.938"/>
+        <Joint picketage="bbm9p6" x="711667031.608" y="-1238607874.668" altitude="-617917837.589">
+<!--            <Normal/>-->
+            <Insulation name="puocZ564bbAFiRZzcrNhMot" sizeOverage="No"/>
+<!--            <Weld/>-->
+        </Joint>
+        <Joint picketage="JUYnAZBZQN6nKtBL2p" x="2143148217.357" y="-1775571657.159" altitude="1555283333.378">
+            <Normal/>
+<!--            <Insulation name="rV" sizeOverage="No"/>-->
+<!--            <Weld/>-->
+        </Joint>
+        <Pointwork number="DoE" side="Symmetric" direction="Backward" mark="pm1_11" hill="false" type="Normal" control="Manual"
+             picketage="WoWJYipSk4cuS4vgr.o.6v1Kvzf7C" x="1363244387.264" y="-469338806.952" altitude="-749574380"/>
+        <Pointwork number="hukbGAq4KNzLkOybyNgg8nYFO8p1_" side="Cross" direction="Backward" mark="pm2_6" hill="false" type="Normal"
+             control="Centralized" picketage="zAJvLw" x="-1546389007.649" y="-189612875.614" altitude="217788210.771"/>
+        <CableLine type="Communication" crossingLevelDifference="291069208" intersectionAngle="743212727" picketage="lAAunk1thN2"
+             x="-1688314874.051" y="-972051676.23" altitude="1736044939.623"/>
+        <CableLine type="Electric" crossingLevelDifference="-805927395" intersectionAngle="220693607" picketage="zR90BryQdrFq4Ez"
+             x="-1113640473.949" y="885482108.777" altitude="-554916854.52"/>
+        <Pipeline crossingLevelDifference="1619362514" description="dmQf4PB6nK5lo8" intersectionAngle="1616240951" picketage="Aszmwj4Tn7b4l0uYy5MJN"
+             x="1042714877.971" y="1089228942.892" altitude="-1694666864.613"/>
+        <Pipeline crossingLevelDifference="-563700656" description="tEe-YwldVceCoFxU1rQ" intersectionAngle="-91836364"
+             picketage="EN" x="-2098614580.387" y="1326233392.417" altitude="860260646.301"/>
+        <RoadCrosspass type="Underpass" crossingLevelDifference="259929372" description="u8FP2g1P1bdA" picketage="c0nF" x="-72534226.502"
+             y="499515460.238" altitude="1788024573.891"/>
+        <RoadCrosspass type="Overbridge" crossingLevelDifference="122307794" description="lj6rJMuxd" picketage="PM8Zuy-tzE5bOvt1WOWi9jQLB"
+             x="1043591403.956" y="-1417129699.956" altitude="-374553952.613"/>
+        <DerailingShoe control="Manual" picketage="nOpvRq" x="1416990608.195" y="194074137.302" altitude="-807547992.711"/>
+        <DerailingShoe control="Centralized" picketage="KEEXq86-lC" x="1924623229.684" y="69260506.666" altitude="-302064757.053"/>
+        <StoppingDevice startPicketage="H5hLHIAFQG" endPicketage="I-GHbJ5U5"/>
+        <StoppingDevice startPicketage="Ik4jOEhopQq" endPicketage="pzlrfDP84VDm.d5lMnya"/>
+        <TrackCrossing mark="udnp7dpIT9hDjgKZy" picketage="ymd" x="1176469926.215" y="-1191730838.118" altitude="54618003.064"/>
+        <TrackCrossing mark="bZr4PGudZ" picketage="ZZozQtcHKnf" x="1101615227.837" y="1795067281.999" altitude="1315785974.23"/>
+        <TurnTable picketage="L" x="-1637676927.86" y="-2138283843.751" altitude="-102791914.919"/>
+        <TurnTable picketage="HpH" x="-1820185578.041" y="519349584.335" altitude="660466960.62"/>
+        <ShoeKicker side="Right" picketage="hKvxuvcJ7dG0bknzUAIUo9nY.eGR6r" x="-1880442323.331" y="990380916.432" altitude="-706981674.409"/>
+        <ShoeKicker side="Left" picketage="vwbyp4iPdTyLhwfPF3OKoO" x="206553343.443" y="848682742.546" altitude="693337613.231"/>
+        <BrakeStop control="Manual" picketage="Lz2110ZqDYl8lb" x="-1060111456.194" y="-1659376805.482" altitude="-1513474489.793"/>
+        <BrakeStop control="Centralized" picketage="hNjhRGU.89WYB5v" x="1836497938.827" y="-293219285.447" altitude="-625974576.747"/>
+        <ClearanceGate picketage="o6FHM1wA" x="-1449691485.124" y="812137156.234" altitude="964605647.311"/>
+        <ClearanceGate picketage="TvxqtOaIBi8IZGat" x="1365939725.222" y="605262731.151" altitude="-1016299369.355"/>
+        <WagonScales>
+            <Start picketage="G4C8GyxBmDgt24WUyFvS8hm" x="-2082721626.439" y="-634320967.661" altitude="-1441141902.326"/>
+            <End picketage="KWdz" x="18656727.998" y="-1018988785.085" altitude="260261957.978"/>
+        </WagonScales>
+        <WagonScales>
+            <Start picketage="bJ" x="305161900.182" y="1386487799.995" altitude="1118959108.524"/>
+            <End picketage="NSg" x="1466257229.709" y="-1003187099.084" altitude="-648553749.678"/>
+        </WagonScales>
+        <WagonRetarder>
+            <Start picketage="dT9Xx5H_D59nuURgElZu1f" x="-557515199.131" y="-1584570882.792" altitude="-1247477759.127"/>
+            <End picketage="b7H" x="-1704530995.935" y="-1514578897.924" altitude="-1372542230.464"/>
+        </WagonRetarder>
+        <WagonRetarder>
+            <Start picketage="W" x="-976771976.727" y="425948593.787" altitude="333780451.407"/>
+            <End picketage="mT" x="1055675659.895" y="154060917.679" altitude="-102717933.025"/>
+        </WagonRetarder>
+        <WagonAxleCounter picketage="rhp7DQ6oe9evHSS4x" x="736022698.743" y="-487665195.762" altitude="1499004127.497"/>
+        <WagonAxleCounter picketage="aY9H1UENJVhC2cj" x="-1953060281.208" y="2084646153.88" altitude="1964514367.796"/>
+        <SurveyPlan>
+            <CoordGeom>
+<!--                <Line length="1605359370.001">
+                    <Start></Start>
+                    <End></End>
+                </Line>-->
+<!--                <Line length="37806805.423">
+                    <Start>1845622040.823 -751812531.831 -655825009.171</Start>
+                    <End>1162088568.591 1093428966.934</End>
+                </Line>-->
+                <Curve rot="ccw" crvType="arc" length="1036364150.932" radius="-2103649371.512">
+<!--                    <Start>-1163622278.731</Start>-->
+                    <Center>-453142902.903 -1911084381.339</Center>
+<!--                    <End>-86791691.066 763734585.403 -1689555804.638</End>-->
+<!--                    <PI>896261994.754 2129025640.285 702987698.96</PI>-->
+<!--                    <Start>-1982900384.75 1785830565.68</Start>-->
+                    <Center>560574430.892</Center>
+<!--                    <End></End>-->
+<!--                    <PI>1963949956.216 1854936500.765 -1531411713.8</PI>-->
+                    <Start>1514420975.681 1093031565.759 1981214229.4</Start>
+<!--                    <Center></Center>-->
+<!--                    <End></End>-->
+<!--                    <PI>847296206.24 1177837858.327 1623239696.932</PI>-->
+                </Curve>
+                <Curve rot="cw" crvType="arc" length="-1039052206.897" radius="1388157567.738">
+<!--                    <Start></Start>-->
+<!--                    <Center>57815016.539 -149702639.871</Center>-->
+                    <End>440665104.797</End>
+<!--                    <PI>-1970186890.584 -1030547356.945</PI>-->
+                    <Start>7326621.696 97785970.675</Start>
+<!--                    <Center></Center>-->
+<!--                    <End>938397178.693</End>-->
+<!--                    <PI></PI>-->
+                    <Start>638532219.043 -316485276.862</Start>
+<!--                    <Center>1893699191.248 -1842087145.029 1684201317.606</Center>-->
+<!--                    <End>-901784052.048 57490170.371</End>-->
+<!--                    <PI>-504933650.41</PI>-->
+                </Curve>
+<!--                <Spiral length="-239348657.07" radiusEnd="785851815.64" radiusStart="-585139798.234" rot="cw" spiType="clothoid">
+                    <End></End>
+                    <Start></Start>
+                    <End>417407491.317</End>
+                </Spiral>-->
+<!--                <Spiral length="-430686711.689" radiusEnd="378082515.502" radiusStart="468957845.21" rot="cw" spiType="clothoid">
+                    <Start>218894634.809 -255088759.33</Start>
+                    <PI>-224043658.467 -2070194853.104</PI>
+                    <End></End>
+                </Spiral>-->
+                <Line length="1045044042.699">
+                    <Start>1289479554.308 747548815.859 1152940432.758</Start>
+                    <End>1873782354.368 -869871362.033 428256120.391</End>
+                </Line>
+                <Line length="-528091264.634">
+                    <Start>857591570.5 296198233.852</Start>
+                    <End>-1391708435.571 2120990404.393</End>
+                </Line>
+<!--                <Curve rot="ccw" crvType="arc" length="-1177670131.729" radius="1630967943.464">
+                    <Start>665876426.595 -150209685.332</Start>
+                    <Center></Center>
+                    <End>-2129672267.436</End>
+                </Curve>-->
+<!--                <Curve rot="ccw" crvType="arc" length="1148507845.247" radius="-521330172.293">
+                    <Start>1989005712.618</Start>
+                    <End>-1135372034.573</End>
+                    <Start>-1597896053.076 -2031434841.182</Start>
+                </Curve>-->
+<!--                <Spiral length="137296790.492" radiusEnd="-1380048444.855" radiusStart="-1560754092.258" rot="ccw" spiType="clothoid">
+                    <End>-1753835240.226 -918905747.568 781552519.689</End>
+                    <PI>399656304.24 -904574253.409</PI>
+                    <PI></PI>
+                </Spiral>-->
+<!--                <Spiral length="70053651.665" radiusEnd="546241669.643" radiusStart="1226371042.742" rot="cw" spiType="clothoid">
+                    <End></End>
+                    <End>-1607054390.942</End>
+                    <End></End>
+                </Spiral>-->
+            </CoordGeom>
+        </SurveyPlan>
+        <DesignProfile>
+            <Element length="-1436679904.947" slope="-1924461354.673">
+                <Start picketage="WxWQ5PijVlx72jkpH" altitude="1201559168.816"/>
+                <End picketage="kZKQBs8TsAs" altitude="976623683.158"/>
+                <EndVertCurve radius="-3204392.581" tangent="1436030863.601" bisector="-2081558917.878"/>
+            </Element>
+            <Element length="-765316974.076" slope="983062650.381">
+                <Start picketage="Gy41hXwgZ" altitude="-678783849.685"/>
+                <End picketage="Hb.Tp90I-clujO5BJ6tmw" altitude="-99192745.603"/>
+                <EndVertCurve radius="-44950012.931" tangent="-427948840.662" bisector="693031011.385"/>
+            </Element>
+        </DesignProfile>
+        <DesignPlan>
+            <CoordGeom>
+<!--                <Line length="-1880679919.144">
+                    <Start>-1915992246.114 1948517194.894</Start>
+                    <End>1298700307.323 -953172408.192 1866891989.659</End>
+                </Line>-->
+<!--                <Line length="1071685752.837">
+                    <Start></Start>
+                    <End>1092148525.766 1203860445.584</End>
+                </Line>-->
+                <Curve rot="ccw" crvType="arc" length="-693146041.714" radius="-369212493.841">
+<!--                    <Start>-2004823399.012</Start>-->
+<!--                    <Center>-515809057.159</Center>-->
+<!--                    <End></End>-->
+                    <PI>1244147631.326</PI>
+<!--                    <Start>-1055825325.997</Start>-->
+<!--                    <Center>831338473.444 -286616022.225</Center>-->
+<!--                    <End>-1052025535.539</End>-->
+                    <PI>-1531530911.63 1163163543.569 -922093978.587</PI>
+<!--                    <Start>-684710226.811 -769851132.677</Start>-->
+<!--                    <Center>-1373943411.983 971783594.939</Center>-->
+                    <End>2068600993.933</End>
+<!--                    <PI>1773461330.594 -701689645.291</PI>-->
+                </Curve>
+                <Curve rot="ccw" crvType="arc" length="-1623497813.533" radius="-537201175.523">
+                    <Start>1698710309.8 -525340844.485 -1838858024.046</Start>
+<!--                    <Center>1837073140.475 707671052.589 164154397.873</Center>-->
+<!--                    <End></End>-->
+<!--                    <PI></PI>-->
+<!--                    <Start></Start>-->
+                    <Center>2122256043.838 -492489352.857</Center>
+<!--                    <End>-1783746012.642</End>-->
+<!--                    <PI>-2014935739.336 1914457534.052 2094414043.819</PI>-->
+<!--                    <Start>1011232831.739 69331407.665 -1125329121.753</Start>-->
+<!--                    <Center></Center>-->
+<!--                    <End>680450281.869 -615361510.72</End>-->
+                    <PI>-658420246.057</PI>
+                </Curve>
+<!--                <Spiral length="-1246670211.109" radiusEnd="384569588.023" radiusStart="1491149074.675" rot="ccw" spiType="clothoid">
+                    <PI>-508284642.104</PI>
+                    <End>-617916401.564</End>
+                    <End></End>
+                </Spiral>-->
+<!--                <Spiral length="149192942.539" radiusEnd="2070742959.202" radiusStart="-1623498583.509" rot="ccw" spiType="clothoid">
+                    <Start></Start>
+                    <Start></Start>
+                    <PI>-806142654.179 -1036587340.127 2106996452.452</PI>
+                </Spiral>-->
+<!--                <Line length="-1269883563.109">
+                    <Start>165897792.311</Start>
+                    <End></End>
+                </Line>-->
+<!--                <Line length="-1577757501.425">
+                    <Start>-200987177.116 -226527687.85</Start>
+                    <End>1295567058.94</End>
+                </Line>-->
+<!--                <Curve rot="cw" crvType="arc" length="855835542.178" radius="-228954768.744">
+                    <End></End>
+                    <Center></Center>
+                    <End>-194029762.857 -1049902127.809</End>
+                </Curve>-->
+<!--                <Curve rot="ccw" crvType="arc" length="-1233786448.076" radius="11385809.273">
+                    <Start>-1448054694.723 -969166882.844</Start>
+                    <PI>-1508690060.425</PI>
+                    <PI>-1126987581.173</PI>
+                </Curve>-->
+                <Spiral length="-1670140214.779" radiusEnd="-139004687.748" radiusStart="-1766285637.706" rot="ccw" spiType="clothoid">
+<!--                    <Start></Start>-->
+                    <PI>-1212386643.226 -1362901612.91</PI>
+<!--                    <End>542566727.413 -726952640.078 259288573.483</End>-->
+<!--                    <Start>-967333171.313</Start>-->
+<!--                    <PI></PI>-->
+                    <End>-71387384.804 -548974322.869 -400036031.447</End>
+<!--                    <Start>269878392.997 -37623802.71</Start>-->
+                    <PI>-1234398.828</PI>
+<!--                    <End>276949124.456 578865982.201</End>-->
+                </Spiral>
+                <Spiral length="-512263644.32" radiusEnd="-120663325.883" radiusStart="-829515153.928" rot="ccw" spiType="clothoid">
+<!--                    <Start></Start>-->
+<!--                    <PI></PI>-->
+                    <End></End>
+<!--                    <Start>-1653063647.461 -938069755.884</Start>-->
+                    <PI>-1325128118.038</PI>
+<!--                    <End></End>-->
+<!--                    <Start>-1052028139.443</Start>-->
+                    <PI>-1193641678.033 1076845979.702 1157016158.206</PI>
+<!--                    <End>-1039261075.3</End>-->
+                </Spiral>
+            </CoordGeom>
+        </DesignPlan>
+    </Track>
+    <Platform name="TJl9E4ijNIalnt" type="Technical" material="Asphalt">
+        <Point description="N7PH1rvmDSTctNtF" picketage="u-zZztKXGMmV03" x="110532698.241" y="435855637.914" altitude="1211536123.186">
+            <Clearance value="112153881.907" trackId="1159983952"/>
+        </Point>
+        <Point description="IE4BfiUj0S" picketage="OkyMU" x="-458128811.752" y="399889099.52" altitude="1813118604.577">
+            <Clearance value="-2041563964.334" trackId="-981998617"/>
+        </Point>
+    </Platform>
+    <Platform name="goKgHqlGH0qj4" type="Technical" material="Concrete">
+        <Point description="vYvlgJlLbOEbA6q-Z3rWKhgJTfWN" picketage="k3" x="-543555021.118" y="464806066.276" altitude="275298945.671">
+            <Clearance value="-142587742.496" trackId="1983651883"/>
+        </Point>
+        <Point description="rk" picketage="XcDsZS6YbSYLIOM" x="-614497534.631" y="1865962288.645" altitude="580382899.133">
+            <Clearance value="681303900.837" trackId="-771796616"/>
+        </Point>
+    </Platform>
+    <Semaphore name="KT8ZKVDEm" type="Mast" direction="Backward" lampCount="2" picketage="AS" x="208795747.442" y="-105405408.066"
+         altitude="-1416994879.756">
+        <Clearance value="-114780359.913" trackId="-142809926"/>
+        <Clearance value="2094249501.486" trackId="-393168820"/>
+        <Entrance TrackId="-1650403898" other="M-6ulG60LOLokv9v"/>
+    </Semaphore>
+    <Semaphore name="IBfAzIssmS9" type="Mast" direction="Straight" lampCount="3" picketage="yIuv" x="-1905758216.928"
+         y="181480736.727" altitude="730202716.609">
+        <Clearance value="-1556608664.75" trackId="1089414402"/>
+        <Clearance value="977655773.258" trackId="1583820006"/>
+        <Entrance TrackId="-2116423518" other="ZW3tm6NTB"/>
+    </Semaphore>
+    <ContactLineMast number="u9ie07.t" type="Metal" anchorFront="Double " anchorRear="Double " picketage="XH" x="781704275.695"
+         y="-234478777.342" altitude="1868505811.098">
+        <Clearance value="-2123545642.044" trackId="912387571"/>
+        <Clearance value="717676827.321" trackId="1219819066"/>
+    </ContactLineMast>
+    <ContactLineMast number="H6851fhnhuuO8" type="Ferroconcrete" anchorFront="Double " anchorRear="Double " picketage="Xwa6hBqt_ejmnI9cF10GQR"
+         x="-1432135192.47" y="-181198223.563" altitude="-31080343.318">
+        <Clearance value="1843822273.156" trackId="1480388643"/>
+        <Clearance value="-1019854249.299" trackId="1130285436"/>
+    </ContactLineMast>
+    <BlockStation side="Right" picketage="wDXn-zpO2NxnZAvbI0sHpiAC22i" x="-340269848.991" y="-1561599472.137" altitude="1395168708.54"/>
+    <BlockStation side="Left" picketage="JcwB-MVLiamiUDrA" x="-2098067992.793" y="-265934124.639" altitude="-1280340735.79"/>
+    <Hut side="Right" picketage="N3" x="-216029624.342" y="-1392319733.563" altitude="-1311365123.755"/>
+    <Hut side="Left" picketage="JMLqMPDdGW.gi75kmqbM1oz8hz4" x="646555420.077" y="-1681707094.917" altitude="-1424431640.431"/>
+    <Station name="cplu0wf" side="Right" type="WithoutClass" startPicketage="XiEs" endPicketage="GAjjWum8dzAHGEgNOPKWZ"
+         picketage="gSB6xdP_cqTHWohu" x="1651900425.274" y="-1649014139.438" altitude="-649978729.062"/>
+    <Station name="GD6CpUG-Lz" side="Left" type="Class2" startPicketage="xr46EGi1aYpdA" endPicketage="hR" picketage="H"
+         x="-803131553.766" y="1268590780.741" altitude="-1494318511.026"/>
+    <PassingTrackSection name="LfZTMH9YeFJv.Vy2qNiX0p" side="No" picketage="be9EFvpSXe8re.faUTz35.K" x="-448563511.779" y="-1817201995.41"
+         altitude="-1230267135.928"/>
+    <PassingTrackSection name="NGe4K" side="No" picketage="AsZ" x="1604535547.726" y="2002618465.918" altitude="1255777860.408"/>
+    <StopPoint name="F7uha2JSs.Mg7tn1" side="Right" picketage="hIdEpnp-KZIf" x="741330990.282" y="1119930979.192" altitude="1163102993.817"/>
+    <StopPoint name="tN" side="Right" picketage="jgd9FMDBBDAp8XJ-cIP_G" x="-778477382.061" y="144869839.141" altitude="775332147.439"/>
+    <RailwayCrossing side="Left" safety="Safe" type="Double" picketage="I_wNTUoItrID.MY" x="-1702894729.877" y="1370683188.446"
+         altitude="778617768.774"/>
+    <RailwayCrossing side="Left" safety="Unsafe" type="Double" picketage="qNmjgjrmBdOiJ5C8iwqk-hT1_oiJ" x="812991311.358"
+         y="590357236.007" altitude="-1306160452.063"/>
+    <FootBridge description="TsXIjND9UI4.k.Tk_" heightCrossing="1340916208" picketage="X14RofFaU" x="-680237405.938"
+         y="959416075.313" altitude="1175512126.897"/>
+    <FootBridge description="ceOh" heightCrossing="-445358650" picketage="hITz.YOp9_D5C" x="154005804.533" y="-540885833.047"
+         altitude="558351428.569"/>
+    <Pipe geometry="Rectangular" material="MetalСorrugated" dim="Fq73qFWaKcGplNqp0cSQ9oRcH8" picketage="zaLALwpCmHqXSFPcOb-L3"
+         x="-1003884117.074" y="-1100237380.295" altitude="-50645254.103"/>
+    <Pipe geometry="Rectangular" material="MetalСorrugated" dim="_S2Nw7y3_4wUnWQG2Asw7-QQ_oo" picketage="OrF"
+         x="-1967378890.088" y="-211970855.934" altitude="902990132.083"/>
+    <Building type="ArmyBarrack" picketage="ZIKRRPrMaBBNc4UxQQ" x="-1642686084.53" y="-1099098265.507" altitude="-811582638.601">
+        <Clearance value="-2045873620.713" trackId="367608980"/>
+        <Clearance value="1166711138.059" trackId="1919433671"/>
+    </Building>
+    <Building type="Living" picketage="zsFz" x="-787476222.78" y="599068938.962" altitude="1222831013.558">
+        <Clearance value="2074753831.656" trackId="465690332"/>
+        <Clearance value="1450882094.127" trackId="-2089927381"/>
+    </Building>
+    <FoulingIndicator trackId1="-34280844" trackId2="-395535913" presence="1" picketage="Xm.evUSKD9tiKCH" x="1662849379.84"
+         y="570675165.085" altitude="-1175220884.806"/>
+    <FoulingIndicator trackId1="1004268133" trackId2="-1554261387" presence="true" picketage="Dd6XVbJ_zds1Uo2PomyUlhq3qhQ"
+         x="-1941914749.194" y="-918360370.189" altitude="-1235241406.804"/>
+    <ShuntingColumn picketage="WfSvPmC4FQeB" x="466077817.005" y="-1118455676.668" altitude="316159631.374">
+        <Clearance value="-2031039743.951" trackId="431789440"/>
+        <Clearance value="2137780473.755" trackId="1093439175"/>
+    </ShuntingColumn>
+    <ShuntingColumn picketage="p7pc8R-o" x="676332203.767" y="1337769581.16" altitude="1268794564.119">
+        <Clearance value="1669204774.181" trackId="-1229608279"/>
+        <Clearance value="2000243772.121" trackId="919768281"/>
+    </ShuntingColumn>
+    <Pointer type="Shunting" picketage="EE_.LEw" x="-964056095.956" y="-113677843.218" altitude="844032316.219">
+        <Clearance value="339639344.479" trackId="399730665"/>
+        <Clearance value="-831101579.434" trackId="519199714"/>
+    </Pointer>
+    <Pointer type="Shunting" picketage="BGXsCiwSYyBSPk8" x="1938999695.337" y="1462159577.232" altitude="2060949340.23">
+        <Clearance value="511165008.801" trackId="1431392992"/>
+        <Clearance value="-2091947839.73" trackId="-1044084446"/>
+    </Pointer>
+    <Loudspeaker picketage="ZKQ9nEocpM5Ufq3Qjxi2x" x="-28198659.27" y="1610258476.731" altitude="425936233.601">
+        <Clearance value="1464029245.041" trackId="-1254348438"/>
+        <Clearance value="-320948581.118" trackId="1714567912"/>
+    </Loudspeaker>
+    <Loudspeaker picketage="kSSY4eUIiMYhpZcr9u6" x="-214419349.683" y="-230329981.065" altitude="1523862676.785">
+        <Clearance value="-199552116.802" trackId="-1817406788"/>
+        <Clearance value="-1317318558.375" trackId="-919664175"/>
+    </Loudspeaker>
+    <WaterPumpColumn picketage="AO5pTe81w4Muv3" x="140326361.548" y="1658662037.41" altitude="-1264406709.208">
+        <Clearance value="406629939.35" trackId="-1837396320"/>
+        <Clearance value="-1690893922.613" trackId="1397865997"/>
+    </WaterPumpColumn>
+    <WaterPumpColumn picketage="b.Yqr_" x="-1520849910.159" y="-1798779119.734" altitude="114729712.571">
+        <Clearance value="415139949.083" trackId="-517319355"/>
+        <Clearance value="1385333517.678" trackId="-331782536"/>
+    </WaterPumpColumn>
+    <FuelSupplyStation picketage="X9zV" x="-265034339.128" y="-427222164.714" altitude="812383012.423">
+        <Clearance value="631499838.135" trackId="-1954478278"/>
+        <Clearance value="-1316251470.59" trackId="218026421"/>
+    </FuelSupplyStation>
+    <FuelSupplyStation picketage="xg-A" x="-402258749.216" y="-1864642163.369" altitude="-1120364318.202">
+        <Clearance value="1788763468.851" trackId="2047072621"/>
+        <Clearance value="1198567276.873" trackId="353207080"/>
+    </FuelSupplyStation>
+    <Trestle type="Сrane">
+        <Point picketage="dL_Jb0BagE-s.DFN89B1H." x="-348470372.722" y="1305856251.346" altitude="1565014147.204">
+            <Clearance value="-521747681.913" trackId="1685540580"/>
+            <Clearance value="-1881070917.376" trackId="2059329139"/>
+        </Point>
+        <Point picketage="dO0ZAU-P6w" x="1213067375.419" y="1202109600.225" altitude="-1356596980.752">
+            <Clearance value="62823118.633" trackId="-1302358171"/>
+            <Clearance value="1335897406.04" trackId="568024241"/>
+        </Point>
+    </Trestle>
+    <Trestle type="Сrane">
+        <Point picketage="q0" x="-1287893949.282" y="-1765303784.997" altitude="-616803188.295">
+            <Clearance value="-1611852434.711" trackId="275539178"/>
+            <Clearance value="-1971782512.31" trackId="-809417834"/>
+        </Point>
+        <Point picketage="qqCl6k.hCPd0YbYvWc8dnbn0QyVLb" x="851351747.913" y="1787567140.173" altitude="753826119.558">
+            <Clearance value="-1513881171.065" trackId="-474554329"/>
+            <Clearance value="-1279608714.307" trackId="-1108694313"/>
+        </Point>
+    </Trestle>
+</elDigitalModel>

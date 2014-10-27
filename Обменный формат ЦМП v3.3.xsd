@@ -1,0 +1,2114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp1 (http://www.altova.com) by Black (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:kspd="http://www.rzdp.ru/KSPD/DigitalModel" targetNamespace="http://www.rzdp.ru/KSPD/DigitalModel" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="Application">
+		<xs:annotation>
+			<xs:documentation>Приложение</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Версия</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="AxisSurveyPoint">
+		<xs:annotation>
+			<xs:documentation>Точка существующей оси пути</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="railElevation" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Возвышение наружного рельса (разница отметок по правой и левой нити), мм.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="gauge" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Ширина колеи, мм.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BlockStation">
+		<xs:annotation>
+			<xs:documentation>Блок пост</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="side" type="kspd:ObjectSide" use="required">
+					<xs:annotation>
+						<xs:documentation>Сторонность</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Bridge">
+		<xs:annotation>
+			<xs:documentation>Мост</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Span" type="kspd:BridgeSpan"/>
+		</xs:sequence>
+		<xs:attribute name="startPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Пикетаж начала</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Пикетаж конца</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="length" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>длина, м.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BridgeSpan">
+		<xs:annotation>
+			<xs:documentation>Пролет моста</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="startPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Начало пролета</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Конец пролета</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="length" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Длина, м.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="material" type="kspd:BridgeSpanMaterial" use="required">
+			<xs:annotation>
+				<xs:documentation>Материал</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="driving" type="kspd:BridgeSpanDriving" use="required">
+			<xs:annotation>
+				<xs:documentation>езда</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BrakeStop">
+		<xs:annotation>
+			<xs:documentation>Упор тормозной</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="control" type="kspd:ControlType">
+					<xs:annotation>
+						<xs:documentation>Способ управления</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Building">
+		<xs:annotation>
+			<xs:documentation>Здание/Сооружение</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances">
+				<xs:attribute name="type" type="kspd:BuildingType">
+					<xs:annotation>
+						<xs:documentation>Тип</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CableLine">
+		<xs:annotation>
+			<xs:documentation>Кабель (точка пересечения кабеля и пути)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="type" type="kspd:CableType" use="required">
+					<xs:annotation>
+						<xs:documentation>Тип</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="crossingLevelDifference" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Глубина/высота пересечения, мм</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="intersectionAngle" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Угол пересечения, градусы</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Clearance">
+		<xs:annotation>
+			<xs:documentation>Габарит</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>Значение габарита, в метрах</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="trackId" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>Идентификатор пути</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ClearanceGate">
+		<xs:annotation>
+			<xs:documentation>Габаритные ворота</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ContactLineMast">
+		<xs:annotation>
+			<xs:documentation>Опора контактной сети</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances">
+				<xs:attribute name="number" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Номер опоры</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="type" type="kspd:MastType">
+					<xs:annotation>
+						<xs:documentation>Тип - материал</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="anchorFront" type="kspd:AnchorType">
+					<xs:annotation>
+						<xs:documentation>Анкер спереди</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="anchorRear" type="kspd:AnchorType">
+					<xs:annotation>
+						<xs:documentation>Анкер сзади</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CoordGeom">
+		<xs:annotation>
+			<xs:documentation>План пути</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="kspd:Line" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="kspd:Curve" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="kspd:Spiral" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CraneWays">
+		<xs:annotation>
+			<xs:documentation>Подкрановые пути</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Point" type="kspd:CraneWaysPoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Точки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CraneWaysPoint">
+		<xs:annotation>
+			<xs:documentation>Точка подкранового пути</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DigitalModel">
+		<xs:annotation>
+			<xs:documentation>Формат цифровой модели пути</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Application" type="kspd:Application" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Приложение</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Model" type="kspd:Model">
+				<xs:annotation>
+					<xs:documentation>Цифровая модель пути</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="version" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Версия формата ЦМП</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DerailingShoe">
+		<xs:annotation>
+			<xs:documentation>Сбрасывающий башмак</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="control" type="kspd:ControlType" use="required">
+					<xs:annotation>
+						<xs:documentation>Способ управления</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InsulationJointType">
+		<xs:annotation>
+			<xs:documentation>Изоляционный стык</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Имя</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sizeOverage" type="kspd:SizeOverage" use="required">
+			<xs:annotation>
+				<xs:documentation>Негабаритность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="IrregularPicket">
+		<xs:annotation>
+			<xs:documentation>Резанный пикет</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="km" type="xs:integer" use="required">
+			<xs:annotation>
+				<xs:documentation>Километр</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="pk" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Пикет</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="length" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Длина</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FoulingIndicator">
+		<xs:annotation>
+			<xs:documentation>Предельный столбик</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="trackId1" type="xs:long" use="required">
+					<xs:annotation>
+						<xs:documentation>Идентификатор пути 1</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="trackId2" type="xs:long" use="required">
+					<xs:annotation>
+						<xs:documentation>Идентификатор пути 2</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="presence" type="xs:boolean" use="required">
+					<xs:annotation>
+						<xs:documentation>Наличие предельного столбика</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FuelSupplyStation">
+		<xs:annotation>
+			<xs:documentation>Пункт раздачи горюче-смазочных материалов</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FootBridge">
+		<xs:annotation>
+			<xs:documentation>Пешеходный мост</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Описание</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="heightCrossing" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Высота пересечения, мм.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GuardRailing">
+		<xs:annotation>
+			<xs:documentation>Ограждение</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Point" type="kspd:GuardRailingPoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Точки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type">
+			<xs:annotation>
+				<xs:documentation>Тип</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="GuardRailingPoint">
+		<xs:annotation>
+			<xs:documentation>Точка ограждения</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Gallery">
+		<xs:annotation>
+			<xs:documentation>Галерея</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Point" type="kspd:GalleryPoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Тички</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GalleryPoint">
+		<xs:annotation>
+			<xs:documentation>Точка галереи</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Hut">
+		<xs:annotation>
+			<xs:documentation>Будка</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="side" type="kspd:ObjectSide" use="required">
+					<xs:annotation>
+						<xs:documentation>Сторонность</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Loudspeaker">
+		<xs:annotation>
+			<xs:documentation>Колонка громкоговорящей связи (громкоговоритель)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Model">
+		<xs:annotation>
+			<xs:documentation>Цифровая модель пути</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Track" type="kspd:Track" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>пути в ЦМП</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Platform" type="kspd:Platform" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Платформа</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Semaphore" type="kspd:Semaphore" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Семафоры</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContactLineMast" type="kspd:ContactLineMast" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Опоры КС</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BlockStation" type="kspd:BlockStation" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Блок - пост</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Hut" type="kspd:Hut" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Будка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Station" type="kspd:Station" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Станция</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PassingTrackSection" type="kspd:PassingTrackSection" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Разъезд</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StopPoint" type="kspd:StopPoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Остановочный пункт</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RailwayCrossing" type="kspd:RailwayCrossing" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Переезд</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FootBridge" type="kspd:FootBridge" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Пешеходный мост</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Pipe" type="kspd:Pipe" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Труба</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Building" type="kspd:Building" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Жилой дом</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FoulingIndicator" type="kspd:FoulingIndicator" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Предельный столб</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ShuntingColumn" type="kspd:ShuntingColumn" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Маневровая колонка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Pointer" type="kspd:Pointer" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Указатель</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Loudspeaker" type="kspd:Loudspeaker" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Громкоговоритель</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WaterPumpColumn" type="kspd:WaterPumpColumn" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Гидроколонка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FuelSupplyStation" type="kspd:FuelSupplyStation" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Пункт ГСМ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Trestle" type="kspd:Trestle" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Эстакада</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Имя ЦМП</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="date" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Дата</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="type" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Тип</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NaturalGroundPoint">
+		<xs:annotation>
+			<xs:documentation>Отметка земли</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NormalJointType">
+		<xs:annotation>
+			<xs:documentation>Обычный рельсовый стык</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="PointObjectWithClearances">
+		<xs:annotation>
+			<xs:documentation>Объект с габаритами</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:sequence>
+					<xs:element name="Clearance" type="kspd:Clearance" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Габариты</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PointObject">
+		<xs:annotation>
+			<xs:documentation>Точечный объект</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="picketage" type="kspd:Picketage">
+			<xs:annotation>
+				<xs:documentation>Пикетаж</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="x" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>Координата X</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="y" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>Координата Y</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="altitude" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>Отметка над уровнем моря</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Pipe">
+		<xs:annotation>
+			<xs:documentation>Труба водопропускная</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="geometry" type="kspd:PipeGeometry" use="required">
+					<xs:annotation>
+						<xs:documentation>Тип/форма трубы</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="material" type="kspd:PipeMaterial">
+					<xs:annotation>
+						<xs:documentation>Материал</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="dim" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Размеры трубы</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Pipeline">
+		<xs:annotation>
+			<xs:documentation>Трубопровод (точка пересечения трубопровода и пути)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="crossingLevelDifference" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Глубина/высота пересечения, мм</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Описание</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="intersectionAngle" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Угол пересечения, градусы</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PointType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Точка элемента плана</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="kspd:Point3d"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Pointer">
+		<xs:annotation>
+			<xs:documentation>Указатель</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances">
+				<xs:attribute name="type" type="kspd:PointerType">
+					<xs:annotation>
+						<xs:documentation>Тип</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Profile">
+		<xs:annotation>
+			<xs:documentation>Продольный профиль</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Element" type="kspd:ProfileElement" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Элементы продольного профиля</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PassingTrackSection">
+		<xs:annotation>
+			<xs:documentation>Разъезд</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Наименование</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="side" type="kspd:SizeOverage" use="required">
+					<xs:annotation>
+						<xs:documentation>Сторонность</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProfileElement">
+		<xs:annotation>
+			<xs:documentation>Элемент продольного профиля</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Start" type="kspd:ProfilePoint">
+				<xs:annotation>
+					<xs:documentation>Начало элемента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="End" type="kspd:ProfilePoint">
+				<xs:annotation>
+					<xs:documentation>Конец элемента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndVertCurve" type="kspd:VertCurve" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Вертикальная кривая в конце элемента профиля</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="length" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Длина</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="slope" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Уклон</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ProfilePoint">
+		<xs:annotation>
+			<xs:documentation>Перелом продольного профиля</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="picketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Пикетаж</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="altitude" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Отметка</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Pointwork">
+		<xs:annotation>
+			<xs:documentation>Стрелочный перевод</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="number" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Номер</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="side" type="kspd:PointworkSide">
+					<xs:annotation>
+						<xs:documentation>Сторонность</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="direction" type="kspd:Directon">
+					<xs:annotation>
+						<xs:documentation>Направление</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="mark" type="kspd:PointworkMark">
+					<xs:annotation>
+						<xs:documentation>Марка</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="hill" type="xs:boolean" use="required">
+					<xs:annotation>
+						<xs:documentation>Горочный</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="type" type="kspd:PointworkType" use="required">
+					<xs:annotation>
+						<xs:documentation>Тип</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="control" type="kspd:ControlType">
+					<xs:annotation>
+						<xs:documentation>Способ управления</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Platform">
+		<xs:annotation>
+			<xs:documentation>Платформа</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Point" type="kspd:PlatformPoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Точки платформы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Имя</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="type" type="kspd:PlatformType">
+			<xs:annotation>
+				<xs:documentation>Тип</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="material" type="kspd:PlatformMaterial">
+			<xs:annotation>
+				<xs:documentation>Материал покрытия</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PlatformPoint">
+		<xs:annotation>
+			<xs:documentation>Точка платформы</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:sequence>
+					<xs:element name="Clearance" type="kspd:Clearance" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Габарит</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Описанеи</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RailwayCrossing">
+		<xs:annotation>
+			<xs:documentation>Переезд</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="side" type="kspd:ObjectSide">
+					<xs:annotation>
+						<xs:documentation>Сторонность</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="safety" type="kspd:Safety" use="required">
+					<xs:annotation>
+						<xs:documentation>Охраняемый</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="type" type="kspd:RailwayCrossingType" use="required">
+					<xs:annotation>
+						<xs:documentation>Тип</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RailJoint">
+		<xs:annotation>
+			<xs:documentation>Рельсовый стык</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:choice>
+					<xs:element name="Normal" type="kspd:NormalJointType">
+						<xs:annotation>
+							<xs:documentation>Обычный</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Insulation" type="kspd:InsulationJointType">
+						<xs:annotation>
+							<xs:documentation>Изоляционный</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Weld" type="kspd:WeldJointType">
+						<xs:annotation>
+							<xs:documentation>Сварной</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RoadCrosspass">
+		<xs:annotation>
+			<xs:documentation>Путепровод (точка пересечения путепровода и пути)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="type" type="kspd:RoadCrosspassType" use="required">
+					<xs:annotation>
+						<xs:documentation>Тип</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="crossingLevelDifference" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Глубина/высота пересечения, мм</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Описание</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RetainingWall">
+		<xs:annotation>
+			<xs:documentation>Подпорная стенка</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Point" type="kspd:RetainingWallPoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Точки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RetainingWallPoint">
+		<xs:annotation>
+			<xs:documentation>Точка подпорной стенки</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Semaphore">
+		<xs:annotation>
+			<xs:documentation>Светофор|семафор</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances">
+				<xs:sequence>
+					<xs:element name="Entrance" type="kspd:SemaphoreEntrance" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Светофор входной?</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Имя</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="type" type="kspd:SemaphoreType">
+					<xs:annotation>
+						<xs:documentation>Тип светофора</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="direction" type="kspd:Directon">
+					<xs:annotation>
+						<xs:documentation>Направление</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="lampCount">
+					<xs:annotation>
+						<xs:documentation>Количество глаз</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="1"/>
+							<xs:maxInclusive value="6"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SemaphoreEntrance">
+		<xs:annotation>
+			<xs:documentation>Признак, что светофор входной</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="TrackId" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Идентификатор пути, для которого светофор является вхродным</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="other">
+			<xs:annotation>
+				<xs:documentation>прочие атрибуты</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ShoeKicker">
+		<xs:annotation>
+			<xs:documentation>Сбрасыватель башмаков</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="side" type="kspd:ObjectSide">
+					<xs:annotation>
+						<xs:documentation>сторонность - в какуи сторону от пути происходит сбрасываения башмака</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShuntingColumn">
+		<xs:annotation>
+			<xs:documentation>Маневровая колонка</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Station">
+		<xs:annotation>
+			<xs:documentation>Станция</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Наименование </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="side" type="kspd:ObjectSide" use="required">
+					<xs:annotation>
+						<xs:documentation>Сторонность</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="type" type="kspd:StationType" use="required">
+					<xs:annotation>
+						<xs:documentation>Тип</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="startPicketage" type="kspd:Picketage">
+					<xs:annotation>
+						<xs:documentation>Пикетаж начала</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="endPicketage" type="kspd:Picketage">
+					<xs:annotation>
+						<xs:documentation>Пикетаж конца</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StopPoint">
+		<xs:annotation>
+			<xs:documentation>Остановочный пункт</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Наименование</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="side" type="kspd:ObjectSide">
+					<xs:annotation>
+						<xs:documentation>Сторонность</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StoppingDevice">
+		<xs:annotation>
+			<xs:documentation>Тормозное устройство</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="startPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Начало</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Конец</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SubgradeEdge">
+		<xs:annotation>
+			<xs:documentation>Бровка земляного полотна</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="delta" type="xs:double" use="required">
+					<xs:annotation>
+						<xs:documentation>Расстояние от оси</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Track">
+		<xs:annotation>
+			<xs:documentation>Путь</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IrregularPicket" type="kspd:IrregularPicket" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>резанный пикет</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Bridge" type="kspd:Bridge" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Мост</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SurveyAxis" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Существующая ось пути - полилиния</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Point" type="kspd:AxisSurveyPoint" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NaturalGroundPoint" type="kspd:NaturalGroundPoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Отметки земли</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubgradeEdge" type="kspd:SubgradeEdge" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Бровка земляного полотна</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Joint" type="kspd:RailJoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Рельсовые стыки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Pointwork" type="kspd:Pointwork" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Стрелочный перевод</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CableLine" type="kspd:CableLine" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Кабель</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Pipeline" type="kspd:Pipeline" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Трубопровод</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RoadCrosspass" type="kspd:RoadCrosspass" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Путепровод</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DerailingShoe" type="kspd:DerailingShoe" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Сбрасывающий башмак</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StoppingDevice" type="kspd:StoppingDevice" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Тормозное устройство</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TrackCrossing" type="kspd:TrackCrossing" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Глухое пересечение</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TurnTable" type="kspd:TurnTable" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Поворотный круг</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ShoeKicker" type="kspd:ShoeKicker" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Сбрасыватель башмаков</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrakeStop" type="kspd:BrakeStop" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Упор тормозной</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearanceGate" type="kspd:ClearanceGate" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Габаритные ворота</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WagonScales" type="kspd:WagonScales" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Весы вагонные</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WagonRetarder" type="kspd:WagonRetarder" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Вагонный замедлитель</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WagonAxleCounter" type="kspd:WagonAxleCounter" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Счетчик осей вагонов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SurveyPlan" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Существующие элементы плана</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CoordGeom" type="kspd:CoordGeom"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DesignProfile" type="kspd:Profile" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Проектный продольный профиль</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DesignPlan" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Проектные элементы плана</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CoordGeom" type="kspd:CoordGeom"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Имя пути</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Идентификатор пути</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="pkBase" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>Признак - базовый путь</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="startPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Пикетаж начала пути</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endPicketage" type="kspd:Picketage" use="required">
+			<xs:annotation>
+				<xs:documentation>Пикетаж конца пути</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="startStub" type="kspd:Stub">
+			<xs:annotation>
+				<xs:documentation>Тупик в начале пути</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="endStub" type="kspd:Stub">
+			<xs:annotation>
+				<xs:documentation>Тупик в конце пути</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TrackCrossing">
+		<xs:annotation>
+			<xs:documentation>Глухое пересечение</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject">
+				<xs:attribute name="mark" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>Марка. Глухие пересечения путей, применяемые в норм, перекрёстных путевых съездах, имеют угол пересечения путей, в два раза больший, чем угол крестовины стрелочного перевода, поэтому в обозначении марок глухих пересечений путей и марок острых и тупых крестовин, составляющих пересечение, удваивают числитель в марке соответствующей крестовины стрелочного перевода. В остальных случаях пользуются глухие пересечения путей под ЛЮБЫМИ углами, однако стандартные пересечения изготовляют обычно под углами 90° и 45°.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Trestle">
+		<xs:annotation>
+			<xs:documentation>Эстакада</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Point" type="kspd:TrestlePoint" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Точки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="kspd:TrestleType">
+			<xs:annotation>
+				<xs:documentation>Тип</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TrestlePoint">
+		<xs:annotation>
+			<xs:documentation>Точка эстакады</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TurnTable">
+		<xs:annotation>
+			<xs:documentation>Поворотный круг</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WagonScales">
+		<xs:annotation>
+			<xs:documentation>Весы вагонные</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Start" type="kspd:PointObject">
+				<xs:annotation>
+					<xs:documentation>Начало</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="End" type="kspd:PointObject">
+				<xs:annotation>
+					<xs:documentation>Конец</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WagonRetarder">
+		<xs:annotation>
+			<xs:documentation>Вагонный замедлитель</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Start" type="kspd:PointObject">
+				<xs:annotation>
+					<xs:documentation>Начало</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="End" type="kspd:PointObject">
+				<xs:annotation>
+					<xs:documentation>Конец</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WagonAxleCounter">
+		<xs:annotation>
+			<xs:documentation>Счетчик осей вагонов</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObject"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WaterPumpColumn">
+		<xs:annotation>
+			<xs:documentation>Гидроколонка</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="kspd:PointObjectWithClearances"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WeldJointType">
+		<xs:annotation>
+			<xs:documentation>Сварной стык</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="VertCurve">
+		<xs:annotation>
+			<xs:documentation>Вертикальная кривая</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="radius" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Радиус</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="tangent" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Тангенс</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="bisector" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Биссектриса</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="Start" type="kspd:PointType">
+		<xs:annotation>
+			<xs:documentation>Начало элемента плана</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="End" type="kspd:PointType">
+		<xs:annotation>
+			<xs:documentation>Конец элемента плана</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Center" type="kspd:PointType">
+		<xs:annotation>
+			<xs:documentation>Центр</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PI" type="kspd:PointType">
+		<xs:annotation>
+			<xs:documentation>Точка пересечения</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Line">
+		<xs:annotation>
+			<xs:documentation>Элемент плана - Прямая</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="kspd:Start"/>
+				<xs:element ref="kspd:End"/>
+			</xs:sequence>
+			<xs:attribute name="length" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Длина, м.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Spiral">
+		<xs:annotation>
+			<xs:documentation>Элемент плана - Переходная кривая </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="3" maxOccurs="3">
+					<xs:element ref="kspd:Start"/>
+					<xs:element ref="kspd:PI"/>
+					<xs:element ref="kspd:End"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="length" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>Длина, м.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="radiusEnd" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>Радиус конца элемента, м.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="radiusStart" type="xs:double" use="required">
+				<xs:annotation>
+					<xs:documentation>Радиус начала элемента, м.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="rot" type="kspd:Сlockwise" use="required">
+				<xs:annotation>
+					<xs:documentation>Направление элемента</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="spiType" type="kspd:SpiralType" use="required">
+				<xs:annotation>
+					<xs:documentation>Тип геометрии переходной кривой</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Curve">
+		<xs:annotation>
+			<xs:documentation>Элемент плана - Круговая кривая</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="3" maxOccurs="unbounded">
+				<xs:element ref="kspd:Start"/>
+				<xs:element ref="kspd:Center"/>
+				<xs:element ref="kspd:End"/>
+				<xs:element ref="kspd:PI" minOccurs="0"/>
+			</xs:choice>
+			<xs:attribute name="rot" type="kspd:Сlockwise" use="required">
+				<xs:annotation>
+					<xs:documentation>Направление кривой</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="crvType" type="kspd:CurveType">
+				<xs:annotation>
+					<xs:documentation>Тип геометрии кривой</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="length" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Длина, м.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="radius" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Радиус круговой кривой, м.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="AnchorType">
+		<xs:annotation>
+			<xs:documentation>Тип анкера КС</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="No">
+				<xs:annotation>
+					<xs:documentation source="Нет"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Single ">
+				<xs:annotation>
+					<xs:documentation source="Одинарная оттяжка"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Double ">
+				<xs:annotation>
+					<xs:documentation source="Двойная оттяжка"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BridgeSpanDriving">
+		<xs:annotation>
+			<xs:documentation>Тип езды по пролету</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bottom">
+				<xs:annotation>
+					<xs:documentation source="Понизу"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Top">
+				<xs:annotation>
+					<xs:documentation source="Поверху"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BridgeSpanMaterial">
+		<xs:annotation>
+			<xs:documentation>Тип пролета моста</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ferroconcrete">
+				<xs:annotation>
+					<xs:documentation source="Железобетонный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Metal">
+				<xs:annotation>
+					<xs:documentation source="Металлический"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Composite">
+				<xs:annotation>
+					<xs:documentation source="Сталежелезобетонный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Concrete">
+				<xs:annotation>
+					<xs:documentation source="Бетонный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Wooden">
+				<xs:annotation>
+					<xs:documentation source="Деревянный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Stone">
+				<xs:annotation>
+					<xs:documentation source="Каменный"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BuildingType">
+		<xs:annotation>
+			<xs:documentation>Тип здания</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Living">
+				<xs:annotation>
+					<xs:documentation source="Жилое"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NotLiving">
+				<xs:annotation>
+					<xs:documentation source="Нежилое"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ArmyBarrack">
+				<xs:annotation>
+					<xs:documentation source="Казарма"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CableType">
+		<xs:annotation>
+			<xs:documentation>Тип кабеля</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Electric">
+				<xs:annotation>
+					<xs:documentation source="Линия электропередач"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Communication">
+				<xs:annotation>
+					<xs:documentation source="Линия связи"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Сlockwise">
+		<xs:annotation>
+			<xs:documentation>Направление</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cw">
+				<xs:annotation>
+					<xs:documentation source="По часовой стрелке"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ccw">
+				<xs:annotation>
+					<xs:documentation source="Против часовой стрелки"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ControlType">
+		<xs:annotation>
+			<xs:documentation>Способ управления</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Centralized">
+				<xs:annotation>
+					<xs:documentation source="ЭЦ"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Manual">
+				<xs:annotation>
+					<xs:documentation source="Механический"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CurveType">
+		<xs:annotation>
+			<xs:documentation>Тип круговой кривой</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="arc">
+				<xs:annotation>
+					<xs:documentation source="Дуга"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Directon">
+		<xs:annotation>
+			<xs:documentation>Направление</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Straight">
+				<xs:annotation>
+					<xs:documentation source="по ходу движения"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Backward">
+				<xs:annotation>
+					<xs:documentation source="против хода движения"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MastType">
+		<xs:annotation>
+			<xs:documentation>Тип опоры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Metal">
+				<xs:annotation>
+					<xs:documentation source="Металлическая"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Ferroconcrete">
+				<xs:annotation>
+					<xs:documentation source="Железобетонная"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DoubleFerroconcrete">
+				<xs:annotation>
+					<xs:documentation source="Двойная железобетонная"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ObjectSide">
+		<xs:annotation>
+			<xs:documentation>Сторонность</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Left">
+				<xs:annotation>
+					<xs:documentation source="Слева"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Right">
+				<xs:annotation>
+					<xs:documentation source="Справа"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RailwayCrossingType">
+		<xs:annotation>
+			<xs:documentation>Тип переезда</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Single">
+				<xs:annotation>
+					<xs:documentation source="Одиночный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Double">
+				<xs:annotation>
+					<xs:documentation source="Двойной"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Picketage">
+		<xs:annotation>
+			<xs:documentation>Пикетаж</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PipeGeometry">
+		<xs:annotation>
+			<xs:documentation>Форма трубы</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Circular">
+				<xs:annotation>
+					<xs:documentation source="Круглого сечения"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Ovoid">
+				<xs:annotation>
+					<xs:documentation source="Оводоидальная"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Rectangular">
+				<xs:annotation>
+					<xs:documentation source="Прямоугольная"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PointworkMark">
+		<xs:annotation>
+			<xs:documentation>Марка стрелочного перевода</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pm1_6">
+				<xs:annotation>
+					<xs:documentation source="марка = 1/6"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm1_9">
+				<xs:annotation>
+					<xs:documentation source="марка = 1/9"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm1_11">
+				<xs:annotation>
+					<xs:documentation source="марка = 1/11"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm1_18">
+				<xs:annotation>
+					<xs:documentation source="Марка = 1/18"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm1_22">
+				<xs:annotation>
+					<xs:documentation source="Марка = 1/22"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm2_6">
+				<xs:annotation>
+					<xs:documentation source="Марка = 2/6"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm2_9">
+				<xs:annotation>
+					<xs:documentation source="Марка = 2/9"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm2_11">
+				<xs:annotation>
+					<xs:documentation source="Марка = 2/11"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pm2_18">
+				<xs:annotation>
+					<xs:documentation source="Марка = 2/18"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Point">
+		<xs:annotation>
+			<xs:documentation>Базовый тип для точек</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="Point3d">
+		<xs:annotation>
+			<xs:documentation>Точка 3D</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="kspd:Point">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PipeMaterial">
+		<xs:annotation>
+			<xs:documentation>Материал трубы</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Metal">
+				<xs:annotation>
+					<xs:documentation source="Металлическая"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MetalСorrugated">
+				<xs:annotation>
+					<xs:documentation source="Металлическая гофрированная"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Ferroconcrete">
+				<xs:annotation>
+					<xs:documentation source="Железобетонная"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PlatformMaterial">
+		<xs:annotation>
+			<xs:documentation>Материал покрытия платформы</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Wood">
+				<xs:annotation>
+					<xs:documentation source="Дерево"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PavingTile">
+				<xs:annotation>
+					<xs:documentation source="Тротуарная плитка"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Asphalt">
+				<xs:annotation>
+					<xs:documentation source="Асфальт"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Concrete">
+				<xs:annotation>
+					<xs:documentation source="Бетон"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PlatformType">
+		<xs:annotation>
+			<xs:documentation>Тип платформы</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PassangersHigh">
+				<xs:annotation>
+					<xs:documentation source="Пассажирская высокая"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PassangersLow">
+				<xs:annotation>
+					<xs:documentation source="Пассажирская низкая"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Cargo">
+				<xs:annotation>
+					<xs:documentation source="Грузовая"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Technical">
+				<xs:annotation>
+					<xs:documentation source="Техническая"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PointworkSide">
+		<xs:annotation>
+			<xs:documentation>Сторонность стрелочного перевода</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Left">
+				<xs:annotation>
+					<xs:documentation source="Обычный левый"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Right">
+				<xs:annotation>
+					<xs:documentation source="Обычный правый"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Symmetric">
+				<xs:annotation>
+					<xs:documentation source="Симметричный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Cross">
+				<xs:annotation>
+					<xs:documentation source="Перекрестный"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PointworkType">
+		<xs:annotation>
+			<xs:documentation>Тип стрелочного перевода</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Normal"/>
+			<xs:enumeration value="Derailing"/>
+			<xs:enumeration value="DerailingSharp"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PointerType">
+		<xs:annotation>
+			<xs:documentation>Тип указателя</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Shunting">
+				<xs:annotation>
+					<xs:documentation source="Указатель роспуска вагонов"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoadCrosspassType">
+		<xs:annotation>
+			<xs:documentation>Тип путепровода</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Overbridge">
+				<xs:annotation>
+					<xs:documentation source="Над жд"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Underpass">
+				<xs:annotation>
+					<xs:documentation source="Под жд"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Stub">
+		<xs:annotation>
+			<xs:documentation>Тупик</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WithoutStop">
+				<xs:annotation>
+					<xs:documentation source="Без упора"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Stop">
+				<xs:annotation>
+					<xs:documentation source="С упором"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StopBallast">
+				<xs:annotation>
+					<xs:documentation source="С упором и балластной призмой"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SemaphoreType">
+		<xs:annotation>
+			<xs:documentation>Тип светофора</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Mast">
+				<xs:annotation>
+					<xs:documentation source="Мачтовый"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Dwarf">
+				<xs:annotation>
+					<xs:documentation source="Карликовый"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Cantilevered">
+				<xs:annotation>
+					<xs:documentation source="Консольный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Tunnel">
+				<xs:annotation>
+					<xs:documentation source="Туннельный"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SizeOverage">
+		<xs:annotation>
+			<xs:documentation>Негабаритность</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="No">
+				<xs:annotation>
+					<xs:documentation source="Габаритный"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Yes">
+				<xs:annotation>
+					<xs:documentation source="Негабаритный"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StationType">
+		<xs:annotation>
+			<xs:documentation>Тип станции</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WithoutClass">
+				<xs:annotation>
+					<xs:documentation source="Без класса"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Class1">
+				<xs:annotation>
+					<xs:documentation source="Первого класса"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Class2">
+				<xs:annotation>
+					<xs:documentation source="Второго класса"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Class3">
+				<xs:annotation>
+					<xs:documentation source="Третьего класса"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Class4">
+				<xs:annotation>
+					<xs:documentation source="Четвертого класса"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Class5">
+				<xs:annotation>
+					<xs:documentation source="Пятого класса"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Safety">
+		<xs:annotation>
+			<xs:documentation>Охраняемость</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Safe">
+				<xs:annotation>
+					<xs:documentation source="Охраняемый"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Unsafe">
+				<xs:annotation>
+					<xs:documentation source="Неохраняемый"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpiralType">
+		<xs:annotation>
+			<xs:documentation>Тип переходной кривой</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="clothoid">
+				<xs:annotation>
+					<xs:documentation source="Клотоида"/>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TrestleType">
+		<xs:annotation>
+			<xs:documentation>Тип эстакады</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Сrane"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
